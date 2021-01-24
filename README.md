@@ -30,4 +30,4 @@ It is hosted as a *Maven* dependency via [JitPack](https://jitpack.io/#micycle1/
 
 ### **That's it!**
 
-Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all! Compatible with any Java project version (8-15).
+Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all! Compatible with any Java project version 11+.
