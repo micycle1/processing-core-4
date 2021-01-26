@@ -22,6 +22,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
+					<compilerVersion>9</compilerVersion>
 					<source>11</source>
 					<target>9</target>
 					<encoding>UTF-8</encoding>
@@ -47,7 +48,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
-					<doclint>none</doclint> <!--Prevent Javadoc incomplete errors  -->
+					<doclint>none</doclint> <!--Prevent Javadoc incomplete errors -->
 				</configuration>
 				<executions>
 					<execution>
