@@ -6,6 +6,13 @@
 	<artifactId>core</artifactId>
 	<version>4.0.3</version>
 	<name>Processing Core</name>
+
+	<properties>
+		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
+		<sonar.organization>micycle</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -22,9 +29,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<compilerVersion>9</compilerVersion>
-					<source>11</source>
-					<target>9</target>
+					<release>11</release>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
