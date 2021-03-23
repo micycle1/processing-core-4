@@ -1,6 +1,9 @@
+[![](https://jitpack.io/v/micycle1/processing-core-4.svg)](https://jitpack.io/#micycle1/processing-core-4)
+ [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=micycle1_processing-core-4&metric=code_smells)](https://sonarcloud.io/dashboard?id=micycle1_processing-core-4) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=micycle1_processing-core-4&metric=ncloc)](https://sonarcloud.io/dashboard?id=micycle1_processing-core-4)
+
 # Processing Core (4.x)
 
-This is a mirror of the *core* library from [Processing 4](https://github.com/processing/processing4/tree/master/core), with the addition of a *pom.xml*, turning it into a standalone *Maven* project.
+This is a mirror of the *core* library from [Processing 4](https://github.com/processing/processing4/tree/master/core), with the addition of a *pom.xml*, turning it into a standalone *Maven* artifact.
 
 It is hosted as a *Maven* dependency via [JitPack](https://jitpack.io/#micycle1/processing-core-4) (from this Github repository) so it can be referenced in your own *Maven* project (for when you want to use the Processing library outside of the Processing IDE).
 
