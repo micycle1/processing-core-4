@@ -8,3 +8,5 @@ bin-test
 core-sources.jar
 /target/
 /.settings/
+.project
+.classpath
