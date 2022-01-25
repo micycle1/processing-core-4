@@ -67,6 +67,20 @@
 
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>jzy3d-snapshots</id>
+			<name>Jzy3d Snapshots</name>
+			<url>https://maven.jzy3d.org/snapshots/</url>
+		</repository>
+		<repository>
+			<id>jzy3d-releases</id>
+			<name>Jzy3d Releases</name>
+			<url>https://maven.jzy3d.org/releases/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 
 		<dependency>
@@ -77,14 +91,15 @@
 
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
-			<artifactId>jogl-all-main</artifactId>
-			<version>2.3.2</version>
+			<artifactId>jogl-all</artifactId>
+			<version>v2.4.0-rc-20210111</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.jogamp.gluegen</groupId>
-			<artifactId>gluegen-rt-main</artifactId>
-			<version>2.3.2</version>
+			<artifactId>gluegen-rt</artifactId>
+			<version>v2.4.0-rc-20210111</version>
 		</dependency>
 
 	</dependencies>
