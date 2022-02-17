@@ -1,3 +1,6 @@
 [submodule "processing4"]
 	path = processing4
 	url = https://github.com/processing/processing4.git
+[submodule "processing4-javafx"]
+	path = processing4-javafx
+	url = https://github.com/processing/processing4-javafx.git

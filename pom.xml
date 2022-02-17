@@ -14,17 +14,16 @@
 	</properties>
 
 	<build>
-		<sourceDirectory>processing4\core\src</sourceDirectory>
 		<resources>
 			<resource>
 				<directory>processing4\core\src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
+			</resource>
+			<resource>
+				<directory>processing4-javafx\src</directory>
 			</resource>
 		</resources>
+		
 		<plugins>
-
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.9.0</version>
@@ -33,7 +32,6 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
 			<plugin>  <!-- Create sources.jar -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -64,7 +62,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 
