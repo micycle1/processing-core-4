@@ -6,7 +6,7 @@ This is a mirror of the *core* library from [Processing 4](https://github.com/pr
 
 It is hosted as a *Maven* dependency via [JitPack](https://jitpack.io/#micycle1/processing-core-4) (from this Github repository) so it can be referenced in your own *Maven* project (for when you want to use the Processing library outside of the Processing IDE).
 
-This mirror is not necessarily up to date with the latest Processing 4 release; it is currently based on Processing [**4.0 beta 6**](https://github.com/processing/processing4/releases/tag/processing-1281-4.0b6).
+This mirror is not necessarily up to date with the latest Processing 4 release; it is currently based on Processing [**4.0 beta 8**](https://github.com/processing/processing4/releases/tag/processing-1283-4.0b8).
 
 ---
 
