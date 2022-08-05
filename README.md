@@ -28,7 +28,7 @@ This mirror is not necessarily up to date with the latest Processing 4 release; 
   <dependency>
 	  <groupId>com.github.micycle1</groupId>
 	  <artifactId>processing-core-4</artifactId>
-	  <version>4.0b6c</version>
+	  <version>4.0b9</version>
 </dependency>
   ```
 
