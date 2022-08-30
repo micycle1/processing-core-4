@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.0b9</version>
+	<version>4.0.1</version>
 	<name>Processing Core</name>
 
 	<properties>
