@@ -14,14 +14,14 @@ This mirror is not necessarily up to date with the latest Processing 4 release; 
 
 ### Step 1. Add the *JitPack* repository to your pom.xml
 
-```
+  ```
 <repositories>
 	<repository>
 		<id>jitpack.io</id>
 		<url>https://jitpack.io</url>
 	</repository>
 </repositories>
-  ```
+```
   ### Step 2. Add the processing-core dependency
 
   ```
@@ -30,8 +30,10 @@ This mirror is not necessarily up to date with the latest Processing 4 release; 
 	<artifactId>processing-core-4</artifactId>
 	<version>4.1.1</version>
 </dependency>
-  ```
+```
 
 ### **That's it!**
 
-Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all! Compatible with any Java project version 11+.
+Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all!
+
+Note: core version 4.1.1 and onwards require Java 17+; prior versions require Java 11+.
