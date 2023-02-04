@@ -4,33 +4,26 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.1.1</version>
+	<version>4.1.2</version>
 	<name>Processing Core</name>
-
 	<properties>
 		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
 		<sonar.organization>micycle</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
-
 	<build>
 		<sourceDirectory>processing4\core\src</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>processing4\core\src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.9.0</version>
+				<version>3.10.0</version>
 				<configuration>
 					<release>17</release>
 					<encoding>UTF-8</encoding>
+					<excludes>
+						<exclude>font/**</exclude>
+						<exclude>icon/**</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -47,12 +40,18 @@
 						<configuration>
 							<sources>
 								<source>processing4-javafx/src/</source>
+								<source>processing4/java/libraries/dxf/src/</source>
+								<source>processing4/java/libraries/io/src/</source>
+								<source>processing4/java/libraries/net/src/</source>
+								<source>processing4/java/libraries/pdf/src/</source>
+								<source>processing4/java/libraries/svg/src/</source>
 							</sources>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>  <!-- Create sources.jar -->
+			<plugin>
+				<!-- Create sources.jar -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>3.2.1</version>
@@ -65,7 +64,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -84,7 +82,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 	<profiles>
 		<profile>
 			<id>uber-jar</id>
@@ -124,23 +121,49 @@
 			</build>
 		</profile>
 	</profiles>
-
+	<repositories>
+		<repository>
+			<name>jogamp</name>
+			<id>jogamp</id>
+			<url>https://jogamp.org/deployment/maven/</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>18.0.2</version>
+			<version>19.0.2.1</version>
 		</dependency>
 		<dependency>
-			<groupId>me.friwi</groupId>
+			<groupId>org.jogamp.jogl</groupId>
 			<artifactId>jogl-all</artifactId>
-			<version>v2.4.0-rc-20210111</version>
+			<version>2.4.0-rc-20230123</version>
 		</dependency>
 		<dependency>
-			<groupId>me.friwi</groupId>
-			<artifactId>gluegen-rt</artifactId>
-			<version>v2.4.0-rc-20210111</version>
+			<groupId>org.jogamp.gluegen</groupId>
+			<artifactId>gluegen-rt-main</artifactId>
+			<version>2.4.0-rc-20230123</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-svggen</artifactId>
+			<version>1.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-dom</artifactId>
+			<version>1.16</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
 		</dependency>
 	</dependencies>
-
 </project>
