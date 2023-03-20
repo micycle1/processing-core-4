@@ -13,6 +13,14 @@
 	</properties>
 	<build>
 		<sourceDirectory>processing4\core\src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>processing4\core\src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
