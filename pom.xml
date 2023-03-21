@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.1.2</version>
+	<version>4.2</version>
 	<name>Processing Core</name>
 	<properties>
 		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
@@ -13,6 +13,7 @@
 	</properties>
 	<build>
 		<sourceDirectory>processing4\core\src</sourceDirectory>
+		<testSourceDirectory>processing4\core\test\</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>processing4/core/src/processing/opengl/shaders/</directory>
@@ -85,6 +86,11 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin> <!-- for test running -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
 		</plugins>
 	</build>
 	<profiles>
@@ -142,12 +148,12 @@
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
 			<artifactId>jogl-all-main</artifactId>
-			<version>2.4.0-rc-20230123</version>
+			<version>2.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jogamp.gluegen</groupId>
 			<artifactId>gluegen-rt-main</artifactId>
-			<version>2.4.0-rc-20230123</version>
+			<version>2.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.xmlgraphics</groupId>
@@ -169,6 +175,12 @@
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
 			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
