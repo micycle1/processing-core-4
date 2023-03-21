@@ -16,7 +16,11 @@
 		<testSourceDirectory>processing4\core\test\</testSourceDirectory>
 		<resources>
 			<resource>
-				<directory>processing4/core/src/processing/opengl/shaders/</directory>
+				<directory>processing4\core\src</directory>
+				<includes>
+				  	<include>**\processing\opengl\shaders\</include>
+					<include>**\processing\opengl\cursors\</include>
+				</includes>
 			</resource>
 		</resources>
 		<plugins>
