@@ -13,6 +13,11 @@
 	</properties>
 	<build>
 		<sourceDirectory>processing4\core\src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>processing4/core/src/processing/opengl/shaders/</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -136,7 +141,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
-			<artifactId>jogl-all</artifactId>
+			<artifactId>jogl-all-main</artifactId>
 			<version>2.4.0-rc-20230123</version>
 		</dependency>
 		<dependency>
