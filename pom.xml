@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.2.1</version>
+	<version>4.2.2</version>
 	<name>Processing Core</name>
 	<properties>
 		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
@@ -20,6 +20,7 @@
 				<includes>
 				  	<include>**\processing\opengl\shaders\</include>
 					<include>**\processing\opengl\cursors\</include>
+					<include>**\processing\core\libDifferent.jnilib</include>
 				</includes>
 			</resource>
 		</resources>
