@@ -9,10 +9,10 @@ import processing.core.PApplet;
  * @author Michael Carleton
  *
  */
-public class IntegrationTest extends PApplet {
+public class RuntimeTest extends PApplet {
 
 	public static void main(String[] args) {
-		PApplet.main(IntegrationTest.class);
+		PApplet.main(RuntimeTest.class);
 	}
 
 	@Override
