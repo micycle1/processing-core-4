@@ -45,11 +45,11 @@ jobs:
       - name: Compile Runtime Test
         run: |
           JAR_FILE=$(ls target/core-*.jar | grep -v javadoc | grep -v sources)
-          javac -cp $JAR_FILE RuntimeTest.java
+          javac -cp $JAR_FILE test/RuntimeTest.java
       - name: Run Runtime Test
         run: |
           JAR_FILE=$(ls target/core-*.jar | grep -v javadoc | grep -v sources)
-          java -cp $JAR_FILE:. RuntimeTest
+          java -cp $JAR_FILE:. test/RuntimeTest
       - uses: actions/upload-artifact@v2
         with:
           name: core
