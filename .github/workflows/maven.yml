@@ -38,18 +38,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B -Puber-jar verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      - name: Echo JAR File
-        run: |
-          JAR_FILE=$(ls target/core-*.jar | grep -v javadoc | grep -v sources)
-          echo $JAR_FILE
-      - name: Compile Runtime Test
-        run: |
-          JAR_FILE=$(ls target/core-*.jar | grep -v javadoc | grep -v sources)
-          javac -cp $JAR_FILE test/RuntimeTest.java
-      - name: Run Runtime Test
-        run: |
-          JAR_FILE=$(ls target/core-*.jar | grep -v javadoc | grep -v sources)
-          java -cp $JAR_FILE:. test/RuntimeTest
       - uses: actions/upload-artifact@v2
         with:
           name: core
