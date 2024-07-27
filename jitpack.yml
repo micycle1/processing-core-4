@@ -1,5 +1,2 @@
 jdk:
   - openjdk17
-install:
-   - echo "Running a custom install command"
-   - ./mvnw install -Dmaven=3.9.8 -DskipTests
