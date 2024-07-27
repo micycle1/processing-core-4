@@ -1,2 +1,5 @@
 jdk:
-  - openjdk17
+ - openjdk17
+install:
+ - mvn wrapper:wrapper
+ - ./mvnw install -DskipTests
