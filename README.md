@@ -36,4 +36,4 @@ This mirror is not necessarily up to date with the latest Processing 4 release; 
 
 Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all!
 
-Note: core version 4.1.1 and onwards require Java 17+; prior versions require Java 11+.
+Note: core version 4.4.2 and onwards require Java 17+; prior versions require Java 11+.

@@ -156,7 +156,7 @@
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>23-ea+22</version>
+			<version>24</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
