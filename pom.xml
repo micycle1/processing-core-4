@@ -21,6 +21,8 @@
 					<include>**\processing\opengl\shaders\</include>
 					<include>**\processing\opengl\cursors\</include>
 					<include>**\processing\core\libDifferent.jnilib</include>
+					<include>icon/**</include>
+					<include>font/**</include>
 				</includes>
 			</resource>
 		</resources>
