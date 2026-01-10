@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest,  macos-13]
     
     steps:
       - name: Checkout code (with submodules)
@@ -34,14 +34,14 @@ jobs:
         timeout-minutes: 5
 
       - name: Build with Maven (compile tests too)
-        run: mvn -B -Puber-jar test-compile package
+        run: mvn -B -Pgithub-actions test-compile package
         timeout-minutes: 30
 
       - name: Run RuntimeTest (Linux)
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb
+          sudo apt-get install -y xvfb libx11-6 libxext6 libxrender1 libxtst6 libxi6 libxrandr2
           FINAL_NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.build.finalName)
           xvfb-run -a env LIBGL_ALWAYS_SOFTWARE=1 java -cp "target/${FINAL_NAME}.jar:target/test-classes" test.RuntimeTest
         timeout-minutes: 10
