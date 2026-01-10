@@ -35,8 +35,20 @@ jobs:
         run: mvn -B -Puber-jar verify
         timeout-minutes: 30
 
+      - name: Setup virtual display (Linux only)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          Xvfb :99 -screen 0 1024x768x24 &
+        timeout-minutes: 3
+
+      - name: Compile RuntimeTest
+        run: javac -cp target/core-4.5.0.jar test/RuntimeTest.java
+        timeout-minutes: 2
+
       - name: Run RuntimeTest
-        run: mvn -B test -Dtest=RuntimeTest
+        run: java -cp "target/core-4.5.0.jar:test" test.RuntimeTest
         env:
           DISPLAY: :99
         timeout-minutes: 5
