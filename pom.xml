@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.4.4</version>
+	<version>4.5.0</version>
 	<name>Processing Core</name>
 	<properties>
 		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
@@ -16,11 +16,13 @@
 		<testSourceDirectory>processing4\core\test\</testSourceDirectory>
 		<resources>
 			<resource>
-				<directory>processing4\core\src</directory>
+				<directory>processing4/core/src</directory>
 				<includes>
-					<include>**\processing\opengl\shaders\</include>
-					<include>**\processing\opengl\cursors\</include>
-					<include>**\processing\core\libDifferent.jnilib</include>
+					<include>**/processing/opengl/shaders/**/*</include>
+					<include>**/processing/opengl/cursors/**/*</include>
+					<include>**/processing/font/**/*</include>
+					<include>**/processing/icon/**/*</include>
+					<include>**/processing/core/libDifferent.jnilib</include>
 				</includes>
 			</resource>
 		</resources>
@@ -156,7 +158,7 @@
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>24</version>
+			<version>23.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
