@@ -31,28 +31,33 @@ jobs:
           cache: 'maven'
         timeout-minutes: 5
 
-      - name: Build with Maven
-        run: mvn -B -Puber-jar verify
+      - name: Build with Maven (compile tests too)
+        run: mvn -B -Puber-jar test-compile package
         timeout-minutes: 30
 
-      - name: Setup virtual display (Linux only)
+      - name: Run RuntimeTest (Linux)
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y xvfb
-          Xvfb :99 -screen 0 1024x768x24 &
-        timeout-minutes: 3
+          FINAL_NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.build.finalName)
+          xvfb-run -a env LIBGL_ALWAYS_SOFTWARE=1 java -cp "target/${FINAL_NAME}.jar:target/test-classes" test.RuntimeTest
+        timeout-minutes: 10
 
-      - name: Compile RuntimeTest
-        run: javac -cp target/core-4.5.0.jar test/RuntimeTest.java
-        timeout-minutes: 2
+      - name: Run RuntimeTest (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          FINAL_NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.build.finalName)
+          java -cp "target/${FINAL_NAME}.jar:target/test-classes" test.RuntimeTest
+        timeout-minutes: 10
 
-      - name: Run RuntimeTest
-        run: java -cp "target/core-4.5.0.jar:test" test.RuntimeTest
-        env:
-          DISPLAY: :99
-        timeout-minutes: 5
-        continue-on-error: false
+      - name: Run RuntimeTest (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $finalName = mvn -q -DforceStdout help:evaluate "-Dexpression=project.build.finalName"
+          java -cp "target\$finalName.jar;target\test-classes" test.RuntimeTest
+        timeout-minutes: 10
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

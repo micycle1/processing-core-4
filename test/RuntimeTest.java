@@ -30,6 +30,7 @@ public class RuntimeTest extends PApplet {
 	@Override
 	public void draw() {
 		ellipse(0, 0, width, height);
+		exit();
 	}
 
 }

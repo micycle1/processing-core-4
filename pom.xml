@@ -12,8 +12,8 @@
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<build>
-		<sourceDirectory>processing4\core\src</sourceDirectory>
-		<testSourceDirectory>processing4\core\test\</testSourceDirectory>
+		<sourceDirectory>processing4/core/src</sourceDirectory>
+		<testSourceDirectory>processing4/core/test</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>processing4/core/src</directory>
@@ -66,6 +66,18 @@
 								<source>processing4/java/libraries/net/src/</source>
 								<source>processing4/java/libraries/pdf/src/</source>
 								<source>processing4/java/libraries/svg/src/</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-extra-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>test</source>
 							</sources>
 						</configuration>
 					</execution>
