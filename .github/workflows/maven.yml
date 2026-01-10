@@ -35,6 +35,13 @@ jobs:
         run: mvn -B -Puber-jar verify
         timeout-minutes: 30
 
+      - name: Run RuntimeTest
+        run: mvn -B test -Dtest=RuntimeTest
+        env:
+          DISPLAY: :99
+        timeout-minutes: 5
+        continue-on-error: false
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         if: success()
