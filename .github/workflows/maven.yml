@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest,  macos-13]
+        os: [ubuntu-latest, windows-latest, macos-15-intel]
     
     steps:
       - name: Checkout code (with submodules)
@@ -44,14 +44,14 @@ jobs:
           sudo apt-get install -y xvfb libx11-6 libxext6 libxrender1 libxtst6 libxi6 libxrandr2
           FINAL_NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.build.finalName)
           xvfb-run -a env LIBGL_ALWAYS_SOFTWARE=1 java -cp "target/${FINAL_NAME}.jar:target/test-classes" test.RuntimeTest
-        timeout-minutes: 10
+        timeout-minutes: 5
 
       - name: Run RuntimeTest (macOS)
         if: runner.os == 'macOS'
         run: |
           FINAL_NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.build.finalName)
           java -cp "target/${FINAL_NAME}.jar:target/test-classes" test.RuntimeTest
-        timeout-minutes: 10
+        timeout-minutes: 5
 
       - name: Run RuntimeTest (Windows)
         if: runner.os == 'Windows'
@@ -59,7 +59,7 @@ jobs:
         run: |
           $finalName = mvn -q -DforceStdout help:evaluate "-Dexpression=project.build.finalName"
           java -cp "target\$finalName.jar;target\test-classes" test.RuntimeTest
-        timeout-minutes: 10
+        timeout-minutes: 5
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

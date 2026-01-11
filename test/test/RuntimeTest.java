@@ -14,22 +14,30 @@ import processing.core.PApplet;
 public class RuntimeTest extends PApplet {
 
 	public static void main(String[] args) {
-		PApplet.main(RuntimeTest.class);
+		try {
+			PApplet.main(RuntimeTest.class);
+		} catch (Throwable t) {
+			t.printStackTrace();
+			System.err.flush();
+			System.exit(1);
+		}
 	}
 
 	@Override
 	public void settings() {
-		size(800, 800, P3D);
+		size(800, 800, JAVA2D);
 	}
 
 	@Override
 	public void setup() {
 		background(255);
+		noLoop();
 	}
 
 	@Override
 	public void draw() {
 		ellipse(0, 0, width, height);
+		System.out.println("Hello from Processing");
 		System.exit(0);
 	}
 
