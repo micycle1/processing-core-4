@@ -20,8 +20,8 @@
 				<includes>
 					<include>**/processing/opengl/shaders/**/*</include>
 					<include>**/processing/opengl/cursors/**/*</include>
-					<include>**/processing/font/**/*</include>
-					<include>**/processing/icon/**/*</include>
+					<include>font/**</include>
+					<include>icon/**</include>
 					<include>**/processing/core/libDifferent.jnilib</include>
 				</includes>
 			</resource>

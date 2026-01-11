@@ -31,13 +31,26 @@ public class RuntimeTest extends PApplet {
 	@Override
 	public void setup() {
 		background(255);
+		fill(255, 0, 0);
 		noLoop();
 	}
 
 	@Override
 	public void draw() {
-		ellipse(0, 0, width, height);
+		background(255);
+		fill(0);
+		noStroke();
+		ellipse(width / 2f, height / 2f, 200, 200);
+
+		loadPixels();
+		int x = 400, y = 400;
+		int c = pixels[y * width + x]; // ARGB packed int
+
 		System.out.println("Hello from Processing");
+		System.out.printf("Pixel(%d,%d) ARGB=0x%08X  a=%d r=%d g=%d b=%d%n", x, y, c, (c >>> 24) & 0xFF, (c >>> 16) & 0xFF, (c >>> 8) & 0xFF, (c) & 0xFF);
+
+		System.out.flush();
+		exit();
 		System.exit(0);
 	}
 
