@@ -36,4 +36,21 @@ This mirror is not necessarily up to date with the latest Processing 4 release; 
 
 Now you don't have to worry about adding core.jar, the JavaFX and JOGL & Gluegen dependencies to your project — this does it all!
 
+## Usage in your Gradle project
+
+The JOGL & GlueGen dependencies (including their platform-specific *native* libraries) are resolved from *Maven Central*, so you only need the *JitPack* and *Maven Central* repositories — no additional *JogAmp* repository is required:
+
+```kotlin
+repositories {
+    mavenCentral()
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+    implementation("com.github.micycle1:processing-core-4:4.5.0")
+}
+```
+
+Because the native libraries are pulled in transitively as regular artifacts, there is no need to install JOGL system-wide or to set `java.library.path` manually.
+
 Note: core version 4.1.1 and onwards require Java 17+; prior versions require Java 11+.
