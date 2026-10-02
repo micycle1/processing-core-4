@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.processing</groupId>
 	<artifactId>core</artifactId>
-	<version>4.5.5</version>
+	<version>4.5.7</version>
 	<name>Processing Core</name>
 	<properties>
 		<sonar.projectKey>micycle1_processing-core-4</sonar.projectKey>
@@ -41,9 +41,15 @@
 				<configuration>
 					<release>17</release>
 					<encoding>UTF-8</encoding>
+					<testExcludes>
+						<testExclude>processing/webgpu/**</testExclude>
+					</testExcludes>
 					<excludes>
 						<exclude>font/**</exclude>
 						<exclude>icon/**</exclude>
+						<!-- Experimental WebGPU backend (needs LWJGL + Rust bindings); disabled upstream by default -->
+						<exclude>processing/webgpu/**</exclude>
+						<exclude>processing/ffi/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
@@ -88,6 +94,12 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>3.3.1</version>
+				<configuration>
+					<excludes>
+						<exclude>processing/webgpu/**</exclude>
+						<exclude>processing/ffi/**</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -103,6 +115,10 @@
 				<version>3.4.1</version>
 				<configuration>
 					<doclint>none</doclint> <!--Prevent Javadoc incomplete errors -->
+					<sourceFileExcludes>
+						<sourceFileExclude>processing/webgpu/**</sourceFileExclude>
+						<sourceFileExclude>processing/ffi/**</sourceFileExclude>
+					</sourceFileExcludes>
 				</configuration>
 				<executions>
 					<execution>
@@ -233,6 +249,13 @@
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
 			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<!-- Compile-time only: core uses @TestOnly (IntList) -->
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>26.0.2</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
